@@ -21,5 +21,8 @@ class ProfileController extends Controller
     public function update(){
         return redirect('admin/profile/edit');
     }
+    /* public function create(Request $request){
+        return redirect('admin/profile/create');
+    }*/
     
 }
