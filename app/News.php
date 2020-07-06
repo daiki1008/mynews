@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $guarded = array('id');
+    protected $guarded = ['id'];
     
-    public static $rules = array(
+    public static $rules = [
         'title' => 'required',
         'body' => 'required',
-        );
+    ];
+        
+        
+    public function histories(){
+        return $this->hasMany('App\History');
+    }
 }
