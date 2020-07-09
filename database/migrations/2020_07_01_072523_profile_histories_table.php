@@ -13,7 +13,6 @@ class ProfileHistoriesTable extends Migration
             $table->increments('id');
             $table->integer('profile_id');
             $table->string('profile_edited_at');
-            
             $table->timestamps();
             
         });

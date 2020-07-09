@@ -33,7 +33,9 @@ class ProfileController extends Controller
     }
 
     public function edit(Request $request){
-        $profile = Profile::find($request->id);
+
+        
+        $profile = Profile::find($request->id=1);
        if(empty($profile)){
             abort(404);
         }
@@ -52,11 +54,11 @@ class ProfileController extends Controller
         $profile->fill($profile_form)->save();
         
         $history = new Profilehistory;
-        $history -> profile_id = $profile->id;
+        $history -> profile_id = 1;
         $history -> profile_edited_at = Carbon::now();
         $history -> save();
         
-        return redirect('admin/profile/edit',['id'=> $profile-> id ]);
+        return redirect('admin/profile/edit',['profile_form'=> $profile ]);
     }
     
     
